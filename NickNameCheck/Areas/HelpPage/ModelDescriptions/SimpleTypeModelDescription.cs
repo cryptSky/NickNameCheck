@@ -1,0 +1,6 @@
+namespace NickNameCheck.Areas.HelpPage.ModelDescriptions
+{
+    public class SimpleTypeModelDescription : ModelDescription
+    {
+    }
+}

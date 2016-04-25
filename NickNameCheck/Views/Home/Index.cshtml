@@ -1,0 +1,35 @@
+﻿@section scripts {
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-messages.js"></script>
+    <script src="~/Scripts/usersController.js"></script>
+    <script src="~/Scripts/ng-grid.js"></script>
+}
+
+<div ng-app="app" ng-controller="usersController" ng-cloak>
+    <div name="usersGrid" class="gridStyle" ng-grid="gridOptions">
+    </div>
+
+    <div>
+        <h2>Create User</h2>
+    </div>
+    <form name="userForm" role="form" ng-submit="submit()" method="post" novalidate>
+        <div class="form-group">
+            <label>Name*</label>
+            <input class="form-control" data-maxlen="50" ng-model="model.Name" required
+                   name="Name" type="text" />
+        </div>
+        <div class="form-group">
+            <label>NickName*</label>
+            <input type="text" class="form-control" data-maxlen="50" ng-model="model.NickName" required name="NickName"
+                           nickname-available />
+                                 
+            <ng-messages class="error" for="userForm.NickName.$error" role="alert">
+                <ng-message when="nickname-available" class="red-error">There is already user with this nickname </ng-message>
+            </ng-messages>
+        </div>
+        <button type="submit" class="btn btn-primary saveButton" ng-disabled="!(userForm.$pending == undefined && userForm.$valid)">
+            Save
+        </button>
+        
+    </form>
+</div>
