@@ -60,7 +60,7 @@
 
         $scope.gridOptions = {
             data: 'users',
-            multiSelect: false
+            multiSelect: false            
         };
 
         $scope.addUser = function (user) {

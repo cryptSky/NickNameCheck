@@ -14,13 +14,11 @@
     </div>
     <form name="userForm" role="form" ng-submit="submit()" method="post" novalidate>
         <div class="form-group">
-            <label>Name*</label>
             <input class="form-control" data-maxlen="50" ng-model="model.Name" required
-                   name="Name" type="text" />
+                   name="Name" type="text" placeholder="Name"/>
         </div>
         <div class="form-group">
-            <label>NickName*</label>
-            <input type="text" class="form-control" data-maxlen="50" ng-model="model.NickName" required name="NickName"
+            <input type="text" class="form-control" data-maxlen="50" ng-model="model.NickName" required name="NickName" placeholder="Nickname"
                            nickname-available />
                                  
             <ng-messages class="error" for="userForm.NickName.$error" role="alert">
